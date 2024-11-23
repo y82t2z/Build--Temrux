@@ -18,6 +18,6 @@ jobs:
           path: kernel
       
       - name: Download Clang
-        run: ||
+        run: |
         chmod +x download-clang.sh
-        ./download-clang.sh
+        bash download-clang.sh
