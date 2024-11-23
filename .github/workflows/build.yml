@@ -16,6 +16,12 @@ jobs:
         with:
           repository: y82t2z/xiaomi_sm8250_kernel
           path: kernel
+
+      - name: Clone AnyKernel
+        uses: actions/checkout@v3
+        with:
+          repository: y82t2z/AnyKernel3
+          path: AnyKernel3
       
       - name: Download Clang
         run: |
