@@ -16,3 +16,8 @@ jobs:
         with:
           repository: y82t2z/xiaomi_sm8250_kernel
           path: kernel
+      
+      - name: Download Clang
+        run: ||
+        chmod +x download-clang.sh
+        ./download-clang.sh
