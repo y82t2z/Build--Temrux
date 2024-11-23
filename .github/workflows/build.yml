@@ -28,3 +28,5 @@ jobs:
            ls
            chmod +x download-clang.sh
            bash download-clang.sh
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
