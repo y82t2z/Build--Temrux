@@ -19,5 +19,6 @@ jobs:
       
       - name: Download Clang
         run: |
+           ls
            chmod +x download-clang.sh
            bash download-clang.sh
