@@ -16,6 +16,7 @@ jobs:
         with:
           repository: y82t2z/xiaomi_sm8250_kernel
           path: kernel
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Clone AnyKernel
         uses: actions/checkout@v3
