@@ -12,14 +12,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clone Kernel
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: y82t2z/WaifuKernel-F3
           path: kernel
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Clone AnyKernel
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: y82t2z/AnyKernel3
           path: AnyKernel3
