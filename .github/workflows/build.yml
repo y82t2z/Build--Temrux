@@ -23,13 +23,11 @@ jobs:
         with:
           repository: y82t2z/AnyKernel3
           path: AnyKernel3
-      - name: Download Clang
-        run: sudo apt install libarchive-tools
 
-      - name: Download Clang
+      - name: Download GCC
         run: |
-           chmod +x download-clang.sh
-           bash download-clang.sh
+           chmod +x download-gcc.sh
+           bash download-gcc.sh
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
