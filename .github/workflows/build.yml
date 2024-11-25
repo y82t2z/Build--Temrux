@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: buildjet-32vcpu-ubuntu-2204
+    runs-on: buildjet-64vcpu-ubuntu-2204
 
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
         with:
           repository: y82t2z/AnyKernel3
           path: AnyKernel3
-      - name: Download Clang
+      - name: Download Tool
         run: sudo apt install libarchive-tools
 
       - name: Download Clang
