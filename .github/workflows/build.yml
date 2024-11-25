@@ -24,8 +24,8 @@ jobs:
           repository: y82t2z/AnyKernel3
           path: AnyKernel3
       - name: Download Tool
-        run: sudo apt install libarchive-tools
-
+        run: sudo apt install libarchive-tools build-essential libncurses-dev bison flex libssl-dev
+        
       - name: Download Clang
         run: |
            chmod +x download-clang.sh
