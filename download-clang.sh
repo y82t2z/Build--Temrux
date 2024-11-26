@@ -1,6 +1,6 @@
-mkdir -p "neutron-clang"
-cd "neutron-clang"
-bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") -S
-bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") --patch=glibc
-echo "Downloaded Neutron-clang Successful"
+mkdir clang
+cd clang
+wget -i <(wget -qO- https://raw.githubusercontent.com/ZyCromerZ/Clang/refs/heads/main/Clang-main-link.txt) -O clang.tar.gz
+tar -xvf clang.tar.gz
+echo "Downloaded Clang Successful"
 cd ../
