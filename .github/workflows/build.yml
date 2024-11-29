@@ -14,7 +14,7 @@ jobs:
       - name: Clone Kernel
         uses: actions/checkout@v4
         with:
-          repository: y82t2z/WaifuKernel-F3
+          repository: y82t2z/kernel_xiaomi_sm8250
           path: kernel
           token: ${{ secrets.GH_TOKEN }}
 
