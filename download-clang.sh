@@ -1,6 +1,6 @@
 mkdir clang
 cd clang
-bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") -S
-bash <(curl -s "https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman") --patch=glibc
+wget -nv -i <(wget -qO- https://raw.githubusercontent.com/ZyCromerZ/Clang/refs/heads/main/Clang-main-link.txt) -O clang.tar.gz
+tar -xvf clang.tar.gz
 echo "Downloaded Clang Successful"
 cd ../
