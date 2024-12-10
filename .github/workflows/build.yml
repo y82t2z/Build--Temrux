@@ -18,18 +18,8 @@ jobs:
           path: kernel
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: Clone AnyKernel
-        uses: actions/checkout@v4
-        with:
-          repository: y82t2z/AnyKernel3
-          path: AnyKernel3
       - name: Download Tool
-        run: sudo apt update && sudo apt install libarchive-tools build-essential libncurses-dev bison flex libssl-dev binutils python3
+        run: sudo apt update && sudo apt install libarchive-tools build-essential libncurses-dev bison flex libssl-dev binutils python3 ccache
         
-      - name: Download Clang
-        run: |
-           chmod +x download-clang.sh
-           bash download-clang.sh
-
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
