@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: namespace-profile-default
+    runs-on: namespace-profile-neko
 
     steps:
       - name: Checkout
@@ -18,8 +18,5 @@ jobs:
           path: kernel/kernel_xiaomi_sm8250
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: Download Tool
-        run: sudo apt update && sudo apt install gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libarchive-tools build-essential libncurses-dev bison flex libssl-dev binutils python3 ccache
-        
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
