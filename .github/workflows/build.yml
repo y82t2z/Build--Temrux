@@ -11,6 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Download Tool
+        run: sudo apt update && sudo apt install gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libarchive-tools build-essential libncurses-dev bison flex libssl-dev binutils python3 ccache
+
       - name: Clone Kernel
         uses: actions/checkout@v4
         with:
