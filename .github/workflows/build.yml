@@ -8,39 +8,39 @@ jobs:
     runs-on: buildjet-32vcpu-ubuntu-2204
 
     steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
 
-  - name: Set up cache for dependencies
-    uses: actions/cache@v3
-    with:
-      path: /tmp/apt-cache
-      key: ${{ runner.os }}-apt-cache-${{ hashFiles('**/apt-*.txt') }}
-      restore-keys: |
-        ${{ runner.os }}-apt-cache-
+    - name: Set up cache for apt dependencies
+      uses: actions/cache@v3
+      with:
+        path: /tmp/apt-cache
+        key: ${{ runner.os }}-apt-cache-${{ hashFiles('**/apt-*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-apt-cache-
 
-  - name: Download Tool (Install dependencies)
-    run: |
-      sudo apt update
-      sudo apt install -y \
-        gcc-aarch64-linux-gnu \
-        gcc-arm-linux-gnueabi \
-        libarchive-tools \
-        build-essential \
-        libncurses-dev \
-        bison \
-        flex \
-        libssl-dev \
-        binutils \
-        python3 \
-        ccache
+    - name: Install dependencies
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -y -q \
+          gcc-aarch64-linux-gnu \
+          gcc-arm-linux-gnueabi \
+          libarchive-tools \
+          build-essential \
+          libncurses-dev \
+          bison \
+          flex \
+          libssl-dev \
+          binutils \
+          python3 \
+          ccache
 
-  - name: Clone Kernel
-    uses: actions/checkout@v4
-    with:
-      repository: y82t2z/WaifuKernel
-      path: kernel/kernel_xiaomi_sm8250
-      token: ${{ secrets.GH_TOKEN }}
+    - name: Clone Kernel
+      uses: actions/checkout@v4
+      with:
+        repository: y82t2z/WaifuKernel
+        path: kernel/kernel_xiaomi_sm8250
+        token: ${{ secrets.GH_TOKEN }}
 
-  - name: Setup tmate session
-    uses: mxschmitt/action-tmate@v3
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
