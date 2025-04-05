@@ -11,21 +11,19 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Free Disk Space
+      uses: jlumbroso/free-disk-space@v1.3.1
+
     - name: Install dependencies
       run: |
         sudo apt-get update -q
-        sudo apt-get install -y -q \
-          gcc-aarch64-linux-gnu \
-          gcc-arm-linux-gnueabi \
-          libarchive-tools \
-          build-essential \
-          libncurses-dev \
-          bison \
-          flex \
-          libssl-dev \
-          binutils \
-          python3 \
-          ccache
+        sudo apt-get install -y repo python3 git gh
+
+    - name: Setup Github Information 
+      run: |
+         git config --global user.name "y82t2z"
+         git config --global user.email "nyakoriandnyarutoru@gmail.com"
+    
 
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
