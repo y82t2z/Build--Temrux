@@ -5,8 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: buildjet-64vcpu-ubuntu-2204
-
+    runs-on: namespace-profile-default
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
