@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Free Disk Space
-      uses: mkorje/free-disk-space-action@v1
+      uses: firus-v/free-disk-space@main
 
     - name: Install dependencies
       run: |
